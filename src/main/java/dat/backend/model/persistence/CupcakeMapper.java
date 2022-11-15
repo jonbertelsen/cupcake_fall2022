@@ -126,7 +126,7 @@ public class CupcakeMapper
 
     public static int createOrder(User user, ConnectionPool connectionPool)
     {
-        String sql = "insert into orders (customer_name) values (?)";
+        String sql = "insert into orders (username) values (?)";
 
         try (Connection connection = connectionPool.getConnection())
         {
@@ -150,7 +150,7 @@ public class CupcakeMapper
     {
         String sql = "insert into order_lines (" +
                 "order_id, top_id, bottom_id, " +
-                "top_price, bottom_price, amount ) values (?,?,?,?,?,?)";
+                "top_price, bottom_price, quantity ) values (?,?,?,?,?,?)";
 
         try (Connection connection = connectionPool.getConnection())
         {
